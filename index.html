@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Valentine's Day ❤️</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom right, #ff9a9e, #fecfef);
+  text-align: center;
+  overflow: hidden;
+}
+
+.container {
+  margin-top: 80px;
+}
+
+h1 {
+  font-size: 40px;
+  color: white;
+  text-shadow: 2px 2px 5px #ff4e8b;
+}
+
+.love-btn {
+  padding: 15px 30px;
+  font-size: 18px;
+  border: none;
+  border-radius: 30px;
+  background: #ff4e8b;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.love-btn:hover {
+  background: #ff1e6c;
+  transform: scale(1.1);
+}
+
+.hidden {
+  display: none;
+}
+
+/* LEFT PHOTO */
+.left-photo {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 180px;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+  border: 4px solid white;
+}
+
+/* RIGHT PHOTO */
+.right-photo {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 180px;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+  border: 4px solid white;
+}
+
+/* Bouquet */
+.bouquet {
+  margin-top: 20px;
+  width: 250px;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.message {
+  font-size: 22px;
+  color: white;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+/* Floating hearts */
+.heart {
+  position: absolute;
+  bottom: -50px;
+  font-size: 24px;
+  animation: float 5s linear infinite;
+  color: #ff4e8b;
+}
+
+@keyframes float {
+  0% {transform: translateY(0) rotate(0deg);}
+  100% {transform: translateY(-800px) rotate(360deg);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>Happy Valentine's Day My Deb ❤️</h1>
+  <button class="love-btn" onclick="showLove()">Click Me 💌</button>
+
+  <div id="surprise" class="hidden">
+
+    <!-- Left Corner Photo -->
+    <img class="left-photo" src="327915b9-fa91-406f-9876-8262afa86dee.jpg" alt="Our Photo 1">
+
+    <!-- Right Corner Photo -->
+    <img class="right-photo" src="448b1ef2-3046-4194-8ddc-3671ce9d411b.jpg" alt="Our Photo 2">
+
+    <!-- Bouquet -->
+    <img class="bouquet" src="https://b2895521.smushcdn.com/2895521/wp-content/uploads/2024/01/01-100.jpg?lossy=1&strip=1&webp=1" alt="Bouquet of Flowers">
+
+    <div class="message">
+     💐💐 Flowers for you my debdeb 💐💐<br>
+      Sorry wa ko anha run para mag celebrate kauban ka, tyt with you family lang sa and bawi ta next week 💋😘 ❤️<br><br>
+      I love you so much and Happy Valentines Day 💕
+    </div>
+  </div>
+
+  <audio id="music" src="https://www.bensound.com/bensound-music/bensound-romantic.mp3"></audio>
+</div>
+
+<script>
+function showLove() {
+  document.getElementById("surprise").classList.remove("hidden");
+  document.getElementById("music").play();
+
+  for(let i = 0; i < 15; i++) {
+    let heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (3 + Math.random() * 3) + "s";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+      heart.remove();
+    }, 5000);
+  }
+}
+</script>
+
+</body>
+</html>
